@@ -1,0 +1,4 @@
+.vscode
+classicwrapper/__pycache__
+config.json
+classicwrapper/log/app.log

@@ -18,7 +18,7 @@ class DynatraceAPI:
         if method == "GET":
             r = requests.request(method, url, params=params, headers=self._auth)
         else:
-             r = requests.request(method, url, json=params, headers=self._auth)
+            r = requests.request(method, url, json=params, headers=self._auth)
         self.logger.debug(f"Got response: {r} from {url}")
         if r.status_code >= 300:
             self.logger.error(f"Error making request: {r.text}")

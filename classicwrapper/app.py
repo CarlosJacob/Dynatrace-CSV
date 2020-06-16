@@ -44,7 +44,10 @@ def json_to_csv(json_obj: Dict):
                 dimension_name = f"SYNTHETIC_TEST_STEP-{serie['dimensions'][0][-16:]}"
                 for timestamp, value in zip(serie['timestamps'], serie["values"]):
                     if value is not None:
-                        value = 1.0 if value > 0.0 else 0.0
+                        if serie['dimensions'][0][:11] == 'HTTP_CHECK-':
+                            value = 0.0 if value == 100.0 else 1.0
+                        else:
+                            value = 1.0 if value > 0.0 else 0.0
                         data.append(["builtin:synthetic.browser.event.failure", dimension_name, timestamp, value])
                     else:
                         data.append(["builtin:synthetic.browser.event.failure", dimension_name, timestamp])
