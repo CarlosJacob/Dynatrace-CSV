@@ -1,4 +1,4 @@
-# Dynatrace API Wrapper
+ # Dynatrace API Wrapper
 
 This project was used for Banco BCI. It is used by Mainsoft, a partner from Chile.
 
@@ -12,3 +12,10 @@ Examples:
 
 * `curl -i  http://localhost:5000/api/v1/timeseries/com.dynatrace.builtin:synthetic.httpmonitor.availability.percent\?customTime\=yesterday\&timezone\=America/Santiago\&entity\=HTTP_CHECK-7E8DEFA7C700159C,HTTP_CHECK-8DE0560C5527F25E`
 * `curl -i  http://localhost:5000/api/v2/metrics/series/builtin:synthetic.browser.event.failure:names\?customTime\=yesterday\&timezone\=America/Santiago\&resolution\=5m\&scope\=entity\(SYNTHETIC_TEST_STEP-20AFFBA53B2A65C9\)`
+
+
+# Actualización 2020 07 01
+
+Se verifica otra opción si es una request http_check y se cambia su valor de OK y NOK
+
+By Carlos Carrasco
